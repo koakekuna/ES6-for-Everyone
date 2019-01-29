@@ -178,4 +178,18 @@ let onSide = 'The Rock';
 ```
 
 ## Module 6 Iterables and Looping
-### The for of loop
+- the "for of" loop
+  - combines the best of a regular for loop, forEach, and for in - cleaner syntax, can break or continue within the loop, and does not loop over the properties in a modified prototype
+  - can use to loop over anything 'iterable' including `arguments` and NodeList
+  ```js
+  const cuts = ['Chuck', 'Brisket', 'Shank', 'Short Rib'];
+
+  for (const [i, cut] of cuts.entries()) {
+    console.log(`${cut} is the ${i + 1} item`);
+  }
+  ```
+- since objects are not iterable, we can use a few different methods to loop over an object
+  - object.entries() will be coming in ES2017
+  - Object.keys(object), but might as well just use "for in" instead
+
+## Module 7 An Array of Array Improvements
