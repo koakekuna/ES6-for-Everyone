@@ -193,3 +193,37 @@ let onSide = 'The Rock';
   - Object.keys(object), but might as well just use "for in" instead
 
 ## Module 7 An Array of Array Improvements
+- use `Array.from()` to turn array-like items into arrays
+```js
+function sumAll() {
+  const nums = Array.from(arguments);
+  return nums.reduce((prev, next) => prev + next, 0);
+}
+```
+- use `Array.of()` to create a new array from every argument you pass it
+```js
+const ages = Array.of(12, 4, 23, 53, 93);
+```
+- use `Array.find()` for finding specific data such as objects returned through JSON
+```js
+const posts = [
+     {
+        "code":"BAcyDyQwcXX",
+        "caption":"Lunch #hamont",
+        "likes":56,
+        "id":"1161022966406956503",
+        "display_src":"https://scontent.cdninstagram.com/hphotos-xap1/t51.2885-15/e35/12552326_495932673919321_1443393332_n.jpg"
+     },
+     {
+        "code":"BAcJeJrQca9",
+        "caption":"Snow! ⛄️🌨❄️ #lifewithsnickers",
+        "likes":59,
+        "id":"1160844458347054781",
+        "display_src":"https://scontent.cdninstagram.com/hphotos-xaf1/t51.2885-15/e35/12407344_1283694208323785_735653395_n.jpg"
+     },
+];
+
+const code = 'BAcJeJrQca9';
+const post = posts.find(post => post.code === code);
+```
+- similarly, use `Array.findIndex()` to find the index
