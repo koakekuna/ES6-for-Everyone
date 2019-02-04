@@ -227,3 +227,19 @@ const code = 'BAcJeJrQca9';
 const post = posts.find(post => post.code === code);
 ```
 - similarly, use `Array.findIndex()` to find the index
+
+## Say Hello to ...Spread and ...Rest
+- spread takes every item from an iterable and apply it to the containing array
+```js
+  const featured = ['Deep Dish', 'Pepperoni', 'Hawaiian'];
+  const specialty = ['Meatzza', 'Spicy Mama', 'Margherita'];
+  // insert veg in-between the two other arrays
+  const pizzas = [...featured, 'veg', ...specialty];
+  // copy a brand new array
+  const fridayPizzas = [...pizzas];
+```
+- the rest param is kinda of like the opposite of the spread operator in that it takes multiple items of an array and puts it in a single value
+```js
+  const runner = ['Wes Bos', 123, 5.5, 5, 3, 6, 35];
+  const [name, id, ...runs] = runner;
+```
