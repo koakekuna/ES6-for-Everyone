@@ -177,7 +177,7 @@ let onSide = 'The Rock';
   console.log(bill);
 ```
 
-## Module 6 Iterables and Looping
+## Module 6 - Iterables and Looping
 - the "for of" loop
   - combines the best of a regular for loop, forEach, and for in - cleaner syntax, can break or continue within the loop, and does not loop over the properties in a modified prototype
   - can use to loop over anything 'iterable' including `arguments` and NodeList
@@ -192,7 +192,7 @@ let onSide = 'The Rock';
   - object.entries() will be coming in ES2017
   - Object.keys(object), but might as well just use "for in" instead
 
-## Module 7 An Array of Array Improvements
+## Module 7 - An Array of Array Improvements
 - use `Array.from()` to turn array-like items into arrays
 ```js
 function sumAll() {
@@ -228,7 +228,7 @@ const post = posts.find(post => post.code === code);
 ```
 - similarly, use `Array.findIndex()` to find the index
 
-## Say Hello to ...Spread and ...Rest
+## Module 8 - Say Hello to ...Spread and ...Rest
 - spread takes every item from an iterable and apply it to the containing array
 ```js
   const featured = ['Deep Dish', 'Pepperoni', 'Hawaiian'];
@@ -242,4 +242,36 @@ const post = posts.find(post => post.code === code);
 ```js
   const runner = ['Wes Bos', 123, 5.5, 5, 3, 6, 35];
   const [name, id, ...runs] = runner;
+```
+## Module 9 - Object Literal Upgrades
+- if the property name and variable you're setting it to are the same, you can omit the variable
+```js
+  const first = 'snickers';
+  const last = 'bos';
+  const dog = {
+    first,
+    last,
+  };
+```
+- method declarations can be shortened by omitting `function()`
+```js
+  const modal = {
+    create(selector) {
+
+    }
+  }
+```
+- can dynamically create a key inside an object
+```js
+  function invertColor(color) {
+      return '#' + ("000000" + (0xFFFFFF ^ parseInt(color.substring(1),16)).toString(16)).slice(-6);
+  }
+
+  const key = 'pocketColor';
+  const value = '#ffc600';
+
+  const tShirt = {
+    [key]: value,
+    [`${key}Opposite`]: invertColor(value)
+  };
 ```
